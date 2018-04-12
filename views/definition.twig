@@ -64,6 +64,10 @@
 {% block js %}
     <script src="/js/owl.carousel.min.js"></script>
     <script>
+        function goBack() {
+            window.history.back();
+        }
+
         $(document).ready(function () {
             $(".owl-carousel").owlCarousel();
 

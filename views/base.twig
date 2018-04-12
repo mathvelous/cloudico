@@ -15,6 +15,33 @@
             crossorigin="anonymous"></script>
 </head>
     <body>
+    {% block register %}
+        <div class="modal">
+            <div class="row space_between">
+                <h2>Pour pouvoir profier pleinement
+                    de notre application inscriver vous.</h2>
+                <button><img src="/images/cross.png" alt="Fermer la fenêtre"></button>
+            </div>
+            <div class="row space_between">
+                <button class="button_green_sm">
+                    <a href="">Inscription</a>
+                </button>
+                <button class="button_bg_none">
+                    <a href="">Connexion</a>
+                </button>
+            </div>
+            <form class="form" action="">
+                <input type="text" placeholder="Pseudonyme">
+                <input type="email" placeholder="Mail">
+                <input type="password" placeholder="Mot de passe">
+                <div class="column align-center">
+                    <button type="submit" class="button_blue_sm big_button">
+                        <a href="">Valider</a>
+                    </button>
+                </div>
+            </form>
+        </div>
+    {% endblock %}
     {% block body %}{% endblock %}
 
     {% block nav %}

@@ -38,7 +38,7 @@
                 </div>
             </div>
         </div>
-        <section>
+        <section class="mb70">
             <form class="form" action="">
                 <label for="word_name">Nom du mot</label>
                 <input id="word_name" type="text" placeholder="Ex : développement">
@@ -60,6 +60,10 @@
 {% block js %}
     <script src="/js/owl.carousel.min.js"></script>
     <script>
+        function goBack() {
+            window.history.back();
+        }
+
         $(document).ready(function () {
             $(".owl-carousel").owlCarousel();
 

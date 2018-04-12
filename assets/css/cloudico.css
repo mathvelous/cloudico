@@ -297,6 +297,19 @@ input[type='search'] {
   display: block;
 }
 
+/* line 220, ../sass/scss/_main.scss */
+.modal {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  padding: 20px;
+  background-color: #ffffff;
+  width: 80vw;
+  display: none;
+}
+
 /* line 1, ../sass/scss/_images.scss */
 .img_radius {
   border-radius: 5px;
@@ -362,27 +375,33 @@ input[type='search'] {
 .demands_size, .add_img, .modify_img, .delete_img {
   width: 30vw;
   height: auto;
+  position: relative;
 }
 
-/* line 58, ../sass/scss/_images.scss */
+/* line 59, ../sass/scss/_images.scss */
 .add_img {
   background: url("/images/add.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-/* line 65, ../sass/scss/_images.scss */
+/* line 66, ../sass/scss/_images.scss */
 .modify_img {
   background: url("/images/modify.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-/* line 72, ../sass/scss/_images.scss */
+/* line 73, ../sass/scss/_images.scss */
 .delete_img {
   background: url("/images/delete.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+/* line 80, ../sass/scss/_images.scss */
+.filter {
+  opacity: .4;
 }
 
 /* line 1, ../sass/scss/_nav.scss */

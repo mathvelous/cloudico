@@ -53,6 +53,7 @@
 .demands_size{
   width: 30vw;
   height: auto;
+  position: relative;
 }
 
 .add_img{
@@ -74,4 +75,8 @@
   background: url('/images/delete.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.filter{
+  opacity: .4;
 }

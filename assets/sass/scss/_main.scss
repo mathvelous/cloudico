@@ -216,3 +216,15 @@ input[type='search']{
 .d_block{
   display: block;
 }
+
+.modal{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  padding: 20px;
+  background-color: #ffffff;
+  width: 80vw;
+  display: none;
+}
