@@ -1,0 +1,64 @@
+{% extends 'base.twig' %}
+{% block body %}
+    <section class="top_cloud_words">
+        <img src="/images/mobile.jpg" width="100%" height="110%" alt="image nuage">
+        <div class="top_cloud_icons">
+            <div class="row space_between mb15 align-center">
+                <button onclick="goBack()"><img src="/images/prev.png" alt=""></button>
+                <a href="/profile"><img src="/images/account.png" alt="Compte"></a>
+            </div>
+            <h3 class="title_cloud_words white">Front end</h3>
+        </div>
+    </section>
+    <main class="container">
+        <input class="mb20" type="search" placeholder="">
+        <section class="container_card">
+            <a href="/definition">
+                <div class="card_def row space_between align-center">
+                    <div>
+                        <h2>JavaScript</h2>
+                        <p class="type">(nom)</p>
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab incidunt
+                            necessitatibus nemo quaerat unde</p>
+                    </div>
+                    <div class="next">
+                        <img src="/images/next.png" alt="next">
+                    </div>
+                </div>
+            </a>
+            <a href="/definition">
+                <div class="card_def row space_between align-center">
+                    <div>
+                        <h2>JavaScript</h2>
+                        <p class="type">(nom)</p>
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab incidunt
+                            necessitatibus nemo quaerat unde</p>
+                    </div>
+                    <div class="next">
+                        <img src="/images/next.png" alt="next">
+                    </div>
+                </div>
+            </a>
+            <a href="/definition">
+                <div class="card_def row space_between align-center">
+                    <div>
+                        <h2>JavaScript</h2>
+                        <p class="type">(nom)</p>
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab incidunt
+                            necessitatibus nemo quaerat unde</p>
+                    </div>
+                    <div class="next">
+                        <img src="/images/next.png" alt="next">
+                    </div>
+                </div>
+            </a>
+        </section>
+    </main>
+{% endblock %}
+{% block js %}
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+{% endblock %}

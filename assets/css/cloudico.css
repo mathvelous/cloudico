@@ -1,0 +1,589 @@
+/* line 1, ../sass/scss/_colors.scss */
+.white {
+  color: white;
+}
+
+/******* Margin *******/
+/* line 4, ../sass/scss/_margin_padding.scss */
+.mx5 {
+  margin: 5px;
+}
+
+/* Top */
+/****/
+/* Bottom */
+/* line 12, ../sass/scss/_margin_padding.scss */
+.mb15 {
+  margin-bottom: 15px;
+}
+
+/* line 16, ../sass/scss/_margin_padding.scss */
+.mb20 {
+  margin-bottom: 20px;
+}
+
+/* line 20, ../sass/scss/_margin_padding.scss */
+.mb70 {
+  margin-bottom: 70px;
+}
+
+/****/
+/* Right */
+/* line 26, ../sass/scss/_margin_padding.scss */
+.mr10 {
+  margin-right: 10px;
+}
+
+/* line 30, ../sass/scss/_margin_padding.scss */
+.mr15 {
+  margin-right: 15px;
+}
+
+/****/
+/* Left */
+/* line 36, ../sass/scss/_margin_padding.scss */
+.ml10 {
+  margin-left: 10px;
+}
+
+/* line 39, ../sass/scss/_margin_padding.scss */
+.ml20 {
+  margin-left: 20px;
+}
+
+/****/
+/******* Padding *******/
+/* line 1, ../sass/scss/_main.scss */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+}
+
+/* line 8, ../sass/scss/_main.scss */
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+/* line 13, ../sass/scss/_main.scss */
+h1 {
+  font-size: 2.8rem;
+}
+
+/* line 17, ../sass/scss/_main.scss */
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+/* line 22, ../sass/scss/_main.scss */
+h3 {
+  font-size: 1.5rem;
+}
+
+/* line 26, ../sass/scss/_main.scss */
+.title_home {
+  width: 50%;
+}
+
+/* line 30, ../sass/scss/_main.scss */
+.container {
+  width: 87vw;
+  margin: 5vh auto;
+}
+
+/* line 35, ../sass/scss/_main.scss */
+input[type='search'] {
+  background: url(/images/glass.png);
+  background-repeat: no-repeat;
+  background-size: 10%;
+  box-shadow: 1px 1px 5px rgba(151, 151, 151, 0.7);
+  background-color: #ffffff;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  height: 40px;
+  margin: 5px 0;
+}
+
+/* line 49, ../sass/scss/_main.scss */
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* line 54, ../sass/scss/_main.scss */
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 59, ../sass/scss/_main.scss */
+.space_between {
+  justify-content: space-between;
+}
+
+/* line 63, ../sass/scss/_main.scss */
+.align-center {
+  align-items: center;
+}
+
+/* line 67, ../sass/scss/_main.scss */
+.big {
+  font-size: 1.5rem;
+}
+
+/* line 71, ../sass/scss/_main.scss */
+.green_line {
+  border-bottom: 1px solid #7FEFC1;
+  margin: 20px 0;
+}
+
+/* line 76, ../sass/scss/_main.scss */
+.top_cloud_words {
+  height: 200px;
+}
+
+/* line 80, ../sass/scss/_main.scss */
+.top_cloud_icons {
+  position: absolute;
+  z-index: 20;
+  top: 5vh;
+  left: 3vh;
+  right: 3vh;
+}
+
+/* line 88, ../sass/scss/_main.scss */
+.title_cloud_words {
+  margin-top: 100px;
+}
+
+/* line 92, ../sass/scss/_main.scss */
+.text {
+  color: #4D4D4D;
+  font-size: 0.8rem;
+}
+
+/* line 97, ../sass/scss/_main.scss */
+.button, .button_blue_sm, .button_green_sm, .button_violet_sm, .button_bg_none {
+  border-radius: 25px;
+  border: none;
+}
+/* line 100, ../sass/scss/_main.scss */
+.button a, .button_blue_sm a, .button_green_sm a, .button_violet_sm a, .button_bg_none a {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+/* line 107, ../sass/scss/_main.scss */
+.button_blue_sm {
+  background: url(/images/bg-blue.jpg);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+/* line 112, ../sass/scss/_main.scss */
+.button_blue_sm a {
+  height: 40px;
+  width: 150px;
+  color: #000000;
+}
+
+/* line 119, ../sass/scss/_main.scss */
+.button_green_sm {
+  background: url(/images/bg-green.jpg);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+/* line 124, ../sass/scss/_main.scss */
+.button_green_sm a {
+  height: 40px;
+  width: 150px;
+  color: #000000;
+}
+
+/* line 131, ../sass/scss/_main.scss */
+.button_violet_sm {
+  background: url(/images/bg-violet.jpg);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+/* line 136, ../sass/scss/_main.scss */
+.button_violet_sm a {
+  height: 40px;
+  width: 150px;
+  color: #ffffff;
+}
+
+/* line 144, ../sass/scss/_main.scss */
+.button_bg_none {
+  background: transparent;
+}
+/* line 147, ../sass/scss/_main.scss */
+.button_bg_none a {
+  height: 40px;
+  width: 150px;
+  color: #000000;
+}
+
+/* line 155, ../sass/scss/_main.scss */
+.big_button a {
+  height: 40px;
+  width: 280px;
+}
+
+/* line 161, ../sass/scss/_main.scss */
+.next {
+  padding: 15px 0px 15px 15px;
+}
+
+/* line 165, ../sass/scss/_main.scss */
+.card_def {
+  margin: 20px 0;
+}
+
+/* line 169, ../sass/scss/_main.scss */
+.container_cards, .container_card, .container_card2, .container_tchat, .container_card3 {
+  margin-bottom: 50px;
+}
+
+/* line 173, ../sass/scss/_main.scss */
+.container_card {
+  max-height: 50vh;
+  overflow: scroll;
+}
+
+/* line 179, ../sass/scss/_main.scss */
+.container_card2, .container_tchat {
+  max-height: 80vh;
+  overflow: scroll;
+}
+
+/* line 186, ../sass/scss/_main.scss */
+.container_card3 {
+  max-height: 60vh;
+  overflow: scroll;
+  margin-bottom: 20px;
+}
+
+/* line 197, ../sass/scss/_main.scss */
+.container_buttons_profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+/* line 202, ../sass/scss/_main.scss */
+.container_buttons_profile button:first-child {
+  margin-bottom: 40px;
+}
+
+/* line 207, ../sass/scss/_main.scss */
+.container_demands {
+  display: flex;
+  justify-content: center;
+}
+
+/* line 212, ../sass/scss/_main.scss */
+.d_none {
+  display: none;
+}
+
+/* line 216, ../sass/scss/_main.scss */
+.d_block {
+  display: block;
+}
+
+/* line 1, ../sass/scss/_images.scss */
+.img_radius {
+  border-radius: 5px;
+}
+
+/* line 5, ../sass/scss/_images.scss */
+.cloud_mobile {
+  background: url("/images/mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 11, ../sass/scss/_images.scss */
+.cloud_title, .sm_cloud_title {
+  color: #ffffff;
+  display: flex;
+  align-items: flex-end;
+  height: 140px;
+  padding: 10px;
+  font-size: 1.4rem;
+}
+
+/* line 20, ../sass/scss/_images.scss */
+.sm_cloud_title {
+  height: 50px;
+  width: 100px;
+  font-size: 0.8rem;
+}
+
+/* line 27, ../sass/scss/_images.scss */
+.img_profile {
+  width: 140px;
+}
+/* line 29, ../sass/scss/_images.scss */
+.img_profile img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+/* line 36, ../sass/scss/_images.scss */
+.cloud_talk {
+  background: url("/images/cloudtalk.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 42, ../sass/scss/_images.scss */
+.add_word {
+  background: url("/images/add.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 47, ../sass/scss/_images.scss */
+.demandes {
+  background: url("/images/vald.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 53, ../sass/scss/_images.scss */
+.demands_size, .add_img, .modify_img, .delete_img {
+  width: 30vw;
+  height: auto;
+}
+
+/* line 58, ../sass/scss/_images.scss */
+.add_img {
+  background: url("/images/add.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 65, ../sass/scss/_images.scss */
+.modify_img {
+  background: url("/images/modify.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 72, ../sass/scss/_images.scss */
+.delete_img {
+  background: url("/images/delete.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 1, ../sass/scss/_nav.scss */
+nav {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  padding: 5px 0;
+  box-shadow: 1px 1px 5px rgba(151, 151, 151, 0.7);
+  background-color: #ffffff;
+}
+/* line 10, ../sass/scss/_nav.scss */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+/* line 17, ../sass/scss/_nav.scss */
+nav ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 25, ../sass/scss/_nav.scss */
+.logo {
+  width: 60px;
+  height: auto;
+}
+/* line 29, ../sass/scss/_nav.scss */
+.logo img {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 1, ../sass/scss/_definition.scss */
+.type {
+  color: #4D4D4D;
+  size: 1.3rem;
+  line-height: 35px;
+}
+
+/* line 7, ../sass/scss/_definition.scss */
+.tags_cloud {
+  display: flex;
+  flex-direction: row;
+}
+
+/* line 12, ../sass/scss/_definition.scss */
+.container_definition {
+  margin: 20px 0;
+  line-height: 20px;
+}
+
+/* line 1, ../sass/scss/_form.scss */
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+}
+/* line 5, ../sass/scss/_form.scss */
+.form label {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+/* line 9, ../sass/scss/_form.scss */
+.form input[placeholder] {
+  font-size: 0.9rem;
+  color: #979797;
+}
+/* line 13, ../sass/scss/_form.scss */
+.form input {
+  margin-bottom: 25px;
+  border: none;
+  padding: 5px 0;
+  border-bottom: 1px solid #7FEFC1;
+}
+/* line 19, ../sass/scss/_form.scss */
+.form textarea {
+  border: none;
+  box-shadow: 1px 1px 5px rgba(151, 151, 151, 0.7);
+  border-radius: 15px;
+  font-size: 1rem;
+  padding: 10px;
+  max-width: 87vw;
+  height: 10vh;
+}
+
+/* line 30, ../sass/scss/_form.scss */
+.button_submit {
+  border-radius: 25px;
+  border: none;
+  background: url(/images/bg-blue.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 250px;
+  margin-top: 20px;
+}
+/* line 38, ../sass/scss/_form.scss */
+.button_submit p {
+  height: 40px;
+  color: #000;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+/* line 47, ../sass/scss/_form.scss */
+.form_talk {
+  position: fixed;
+  bottom: 7vh;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-contentt: flex-end;
+}
+/* line 57, ../sass/scss/_form.scss */
+.form_talk textarea {
+  border: none;
+  box-shadow: 1px 1px 5px rgba(151, 151, 151, 0.7);
+  font-size: 1rem;
+  padding: 10px;
+  max-width: 100vw;
+  height: 8vh;
+}
+/* line 65, ../sass/scss/_form.scss */
+.form_talk button {
+  display: flex;
+  justify-content: flex-end;
+}
+/* line 69, ../sass/scss/_form.scss */
+.form_talk button p {
+  margin: 15px;
+  color: #000;
+  background-color: #7FEFC1;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+/* line 1, ../sass/scss/_tchat.scss */
+.container_tchat {
+  max-height: 80vh;
+  overflow: scroll;
+  padding-top: 30px;
+}
+
+/* line 7, ../sass/scss/_tchat.scss */
+.picture_tchat {
+  background: url("/images/profile.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 10;
+}
+
+/* line 18, ../sass/scss/_tchat.scss */
+.message {
+  width: 80%;
+  background-color: #E7F7F4;
+  padding: 25px;
+  margin-top: -15px;
+  border-radius: 15px;
+}
+/* line 24, ../sass/scss/_tchat.scss */
+.message p {
+  font-size: 0.8rem;
+  color: #4D4D4D;
+}
+
+/* line 30, ../sass/scss/_tchat.scss */
+.message_left, .message_right {
+  margin-bottom: 20px;
+}
+
+/* line 35, ../sass/scss/_tchat.scss */
+.message_left .top_message {
+  display: flex;
+  align-items: center;
+}
+/* line 38, ../sass/scss/_tchat.scss */
+.message_left .top_message p {
+  margin-left: 10px;
+}
+
+/* line 45, ../sass/scss/_tchat.scss */
+.message_right .top_message {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-start;
+}
+/* line 50, ../sass/scss/_tchat.scss */
+.message_right .top_message p {
+  margin-right: 10px;
+}

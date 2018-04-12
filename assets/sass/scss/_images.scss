@@ -1,0 +1,77 @@
+.img_radius{
+  border-radius: 5px;
+}
+
+.cloud_mobile {
+  background: url('/images/mobile.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cloud_title{
+  color: #ffffff;
+  display: flex;
+  align-items: flex-end;
+  height: 140px;
+  padding: 10px;
+  font-size: 1.4rem;
+}
+
+.sm_cloud_title{
+  @extend .cloud_title;
+  height: 50px;
+  width: 100px;
+  font-size: 0.8rem;
+}
+
+.img_profile{
+  width: 140px;
+  img{
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+  }
+}
+
+.cloud_talk{
+  background: url('/images/cloudtalk.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.add_word{
+  background: url('/images/add.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.demandes{
+  background: url('/images/vald.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.demands_size{
+  width: 30vw;
+  height: auto;
+}
+
+.add_img{
+  @extend .demands_size;
+  background: url('/images/add.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.modify_img{
+  @extend .demands_size;
+  background: url('/images/modify.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.delete_img{
+  @extend .demands_size;
+  background: url('/images/delete.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

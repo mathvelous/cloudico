@@ -1,0 +1,90 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row space_between mb15 align-center">
+            <button onclick="goBack()"><img src="/images/prev.png" alt=""></button>
+            <a href="/profile"><img src="/images/account.png" alt="Compte"></a>
+        </div>
+    </div>
+    <section class="container_demands">
+        <a href="/demandes-add" class="mx5">
+            <div class="img_radius add_img">
+                <p class="sm_cloud_title">Ajouts</p>
+            </div>
+        </a>
+        <a href="/demandes-modify" class="mx5">
+            <div class="img_radius modify_img">
+                <p class="sm_cloud_title">Modifications</p>
+            </div>
+        </a>
+        <a href="/demandes-delete" class="mx5">
+        <div class="img_radius delete_img">
+            <p class="sm_cloud_title">Suppression</p>
+        </div>
+        </a>
+    </section>
+    <main class="container">
+        <section class="container_card3">
+            <a href="/vald-delete">
+                <div class="card_def row space_between align-center">
+                    <div>
+                        <h2>JavaScript</h2>
+                        <p class="type">(nom)</p>
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab incidunt
+                            necessitatibus nemo quaerat unde</p>
+                    </div>
+                    <div class="next">
+                        <img src="/images/next.png" alt="next">
+                    </div>
+                </div>
+            </a>
+            <a href="/vald-delete">
+                <div class="card_def row space_between align-center">
+                    <div>
+                        <h2>JavaScript</h2>
+                        <p class="type">(nom)</p>
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab incidunt
+                            necessitatibus nemo quaerat unde</p>
+                    </div>
+                    <div class="next">
+                        <img src="/images/next.png" alt="next">
+                    </div>
+                </div>
+            </a>
+            <a href="/vald-delete">
+                <div class="card_def row space_between align-center">
+                    <div>
+                        <h2>JavaScript</h2>
+                        <p class="type">(nom)</p>
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab incidunt
+                            necessitatibus nemo quaerat unde</p>
+                    </div>
+                    <div class="next">
+                        <img src="/images/next.png" alt="next">
+                    </div>
+                </div>
+            </a>
+            <a href="/vald-delete">
+                <div class="card_def row space_between align-center">
+                    <div>
+                        <h2>JavaScript</h2>
+                        <p class="type">(nom)</p>
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab incidunt
+                            necessitatibus nemo quaerat unde</p>
+                    </div>
+                    <div class="next">
+                        <img src="/images/next.png" alt="next">
+                    </div>
+                </div>
+            </a>
+        </section>
+    </main>
+{% endblock %}
+{% block js %}
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+{% endblock %}

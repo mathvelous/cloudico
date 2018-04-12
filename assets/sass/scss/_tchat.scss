@@ -1,0 +1,54 @@
+.container_tchat{
+  max-height:80vh;
+  overflow: scroll;
+  padding-top: 30px;
+}
+
+.picture_tchat {
+  background: url('/images/profile.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 10;
+}
+
+.message{
+  width: 80%;
+  background-color: #E7F7F4;
+  padding: 25px;
+  margin-top: -15px;
+  border-radius: 15px;
+  p{
+    font-size: 0.8rem;
+    color: $textColor;
+  }
+}
+
+.message_left, .message_right{
+  margin-bottom: 20px;
+}
+
+.message_left{
+  .top_message{
+    display: flex;
+    align-items: center;
+    p{
+      margin-left: 10px;
+    }
+  }
+}
+
+.message_right{
+  .top_message{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-start;
+    p{
+      margin-right: 10px;
+    }
+  }
+}

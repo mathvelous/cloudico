@@ -1,0 +1,68 @@
+{% extends 'base.twig' %}
+{% block body %}
+    <main class="container">
+        <div class="row space_between mb15 align-center">
+            <button onclick="goBack()"><img src="/images/prev.png" alt=""></button>
+            <a href="/profile"><img src="/images/account.png" alt="Compte"></a>
+        </div>
+        <div>
+            <h2>Sujet du Cloudtalk :</h2>
+            <p class="text">Peut on ajouter des mots dans le domaine de la
+                technologie mais pas du développement?</p>
+            <section class="container_tchat">
+                <div class="message_left">
+                    <div class="top_message">
+                        <div class="picture_tchat"></div>
+                        <p>Pseudo</p>
+                    </div>
+                    <div class="column align-center">
+                        <div class="message">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam animi delectus
+                                dicta dolores hic id illum libero maiores minima, mollitia, necessitatibus
+                                nostrum nulla placeat quibusdam quidem saepe similique veritatis.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="message_right">
+                    <div class="top_message">
+                        <div class="picture_tchat"></div>
+                        <p>Pseudo</p>
+                    </div>
+                    <div class="column align-center">
+                        <div class="message">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam animi delectus
+                                dicta dolores hic id illum libero maiores minima, mollitia, necessitatibus
+                                nostrum nulla placeat quibusdam quidem saepe similique veritatis.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="message_left">
+                    <div class="top_message">
+                        <div class="picture_tchat"></div>
+                        <p>Pseudo</p>
+                    </div>
+                    <div class="column align-center">
+                        <div class="message">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam animi delectus
+                                dicta dolores hic id illum libero maiores minima, mollitia, necessitatibus
+                                nostrum nulla placeat quibusdam quidem saepe similique veritatis.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <div class="form_talk">
+        <textarea name=""></textarea>
+        <button type="submit">
+            <p>Envoyer</p>
+        </button>
+    </div>
+{% endblock %}
+{% block js %}
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+{% endblock %}

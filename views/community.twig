@@ -1,0 +1,27 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+    <main class="container">
+        <div class="row space_between mb15">
+            <div></div>
+            <a href="/profile"><img src="/images/account.png" alt="Compte"></a>
+        </div>
+        <section>
+            <a href="/cloud-talk">
+                <div class="img_radius cloud_talk mb20">
+                    <p class="cloud_title">Prochain CloudTalk</p>
+                </div>
+            </a>
+            <a href="/add-word">
+                <div class="img_radius add_word mb20">
+                    <p class="cloud_title">Ajouter un mot</p>
+                </div>
+            </a>
+            <a href="/demandes-add">
+                <div class="img_radius demandes mb20">
+                    <p class="cloud_title">Les demandes de validation</p>
+                </div>
+            </a>
+        </section>
+    </main>
+{% endblock %}
