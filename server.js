@@ -12,6 +12,16 @@ const server = require('http').createServer(app);
 /* variable globales */
 var port = 1337;
 
+//Connection mysql
+var connexion = function () {
+    return mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "root",
+        database: "cloudico"
+    });
+}
+
 /* ROAD TO ASSETS DIRECTORY */
 app.use(session({ secret: 'this-is-a-secret-token'}));
 
@@ -70,6 +80,17 @@ app.get('/vald-modification', function (req, res) {
 })
 app.get('/vald-delete', function (req, res) {
     res.render('vald_delete.twig');
+})
+
+app.post('/register', function (req, res) {
+    var co = connexion()
+    co.connect()
+    co.query("INSERT INTO user (name, email, password) VALUES ('" + req.body.name + "','" + req.body.email + "','" + req.body.password + "')" , function (error, results, fields){
+        if (error){
+            return console.log('error in server ', error)
+        }
+        console.log('ok')
+    })
 })
 
 

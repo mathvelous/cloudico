@@ -29,7 +29,8 @@ h3{
 
 .container{
   width: 87vw;
-  margin: 5vh auto;
+  margin: 0 auto;
+  padding: 5vh 0;
 }
 
 input[type='search']{
@@ -219,12 +220,24 @@ input[type='search']{
 
 .modal{
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 40;
   padding: 20px;
   background-color: #ffffff;
-  width: 80vw;
-  display: none;
+  width: 78vw;
+  box-shadow: 2px 2px 5px rgba(143, 143, 143, .8);
+  border-radius:15px;
+  /*display: none;*/
+}
+
+.bg-modal{
+  background-color: rgba(143, 143, 143, .8);
+  position: relative;
+  top: 0;
+  z-index: 20;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
 }

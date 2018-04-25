@@ -1,37 +1,37 @@
 {% extends 'base.twig' %}
-{% block inscription %}
-{% endblock %}
-{% block body %}
-    <main class="container">
-        <div class="row space_between mb15">
-            <h1 class="title_home">Chercher un mot</h1>
-            <a href="/profile"><img src="/images/account.png" alt="Compte"></a>
-        </div>
 
-        <input id="search" class="mb20" type="search" placeholder="">
-        <div class="green_line">
-        </div>
-        <section>
-            <h2 class="big mb20">Découvrez nos nuages de mots</h2>
-            <div class="container_card">
-                <a href="/cloud-words">
-                    <div class="img_radius cloud_mobile mb20">
-                        <p class="cloud_title">Mobile</p>
-                    </div>
-                </a>
-                <a href="/cloud-words">
-                    <div class="img_radius cloud_mobile mb20">
-                        <p class="cloud_title">Mobile</p>
-                    </div>
-                </a>
-                <a href="/cloud-words">
-                    <div class="img_radius cloud_mobile mb20">
-                        <p class="cloud_title">Mobile</p>
-                    </div>
-                </a>
+{% block body %}
+    <div class="bg-modal">
+        <main class="container">
+            <div class="row space_between mb15">
+                <h1 class="title_home">Chercher un mot</h1>
+                <a href="/profile"><img src="/images/account.png" alt="Compte"></a>
             </div>
-        </section>
-    </main>
+            <input id="search" class="mb20" type="search" placeholder="">
+            <div class="green_line">
+            </div>
+            <section>
+                <h2 class="big mb20">Découvrez nos nuages de mots</h2>
+                <div class="container_card">
+                    <a href="/cloud-words">
+                        <div class="img_radius cloud_mobile mb20">
+                            <p class="cloud_title">Mobile</p>
+                        </div>
+                    </a>
+                    <a href="/cloud-words">
+                        <div class="img_radius cloud_mobile mb20">
+                            <p class="cloud_title">Mobile</p>
+                        </div>
+                    </a>
+                    <a href="/cloud-words">
+                        <div class="img_radius cloud_mobile mb20">
+                            <p class="cloud_title">Mobile</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
 {% endblock %}
 {% block js %}
     <script>

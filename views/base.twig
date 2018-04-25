@@ -15,50 +15,71 @@
             crossorigin="anonymous"></script>
 </head>
     <body>
-    {% block register %}
-        <div class="modal">
-            <div class="row space_between">
-                <h2>Pour pouvoir profier pleinement
-                    de notre application inscriver vous.</h2>
-                <button><img src="/images/cross.png" alt="Fermer la fenêtre"></button>
-            </div>
-            <div class="row space_between">
-                <button class="button_green_sm">
-                    <a href="">Inscription</a>
-                </button>
-                <button class="button_bg_none">
-                    <a href="">Connexion</a>
-                </button>
-            </div>
-            <form class="form" action="">
-                <input type="text" placeholder="Pseudonyme">
-                <input type="email" placeholder="Mail">
-                <input type="password" placeholder="Mot de passe">
-                <div class="column align-center">
-                    <button type="submit" class="button_blue_sm big_button">
-                        <a href="">Valider</a>
+        {% block register %}
+            <div class="modal">
+                <div class="row space_between">
+                    <h2 class="mb20">Pour pouvoir profier pleinement
+                        de notre application inscriver vous.</h2>
+                    <button class="mb70"><img src="/images/cross.png" alt="Fermer la fenêtre"></button>
+                </div>
+                <div class="row space_between">
+                    <button class="button_green_sm">
+                        <a href="">Inscription</a>
+                    </button>
+                    <button class="button_bg_none">
+                        <a href="">Connexion</a>
                     </button>
                 </div>
-            </form>
-        </div>
-    {% endblock %}
-    {% block body %}{% endblock %}
+                <form class="form" id="registerForm">
+                    <input type="text" name="name" placeholder="Pseudonyme">
+                    <input type="email" name="email" placeholder="Mail">
+                    <input type="password" name="password" placeholder="Mot de passe">
+                    <div class="column align-center">
+                        <button type="submit" class="button_blue_sm big_button">
+                            <p>Valider</p>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        {% endblock %}
+        {% block body %}{% endblock %}
+        {% block nav %}
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/community"><img src="/images/community.png" alt="community"></a>
+                    </li>
+                    <li class="logo">
+                        <a href="/"><img src="/images/logo.png" alt="Cloudico logo"></a>
+                    </li>
+                    <li>
+                        <a href="/profile"><img src="/images/mycloud.png" alt="my cloud"></a>
+                    </li>
+                </ul>
+            </nav>
+        {% endblock %}
 
-    {% block nav %}
-        <nav>
-            <ul>
-                <li>
-                    <a href="/community"><img src="/images/community.png" alt="community"></a>
-                </li>
-                <li class="logo">
-                    <a href="/"><img src="/images/logo.png" alt="Cloudico logo"></a>
-                </li>
-                <li>
-                    <a href="/profile"><img src="/images/mycloud.png" alt="my cloud"></a>
-                </li>
-            </ul>
-        </nav>
-    {% endblock %}
-    {% block js %}{% endblock %}
+        <script>
+            $(document).ready(function () {
+
+                var form = $('#registerForm')
+
+                form.submit(function(e){
+                    e.preventDefault()
+
+                    var data = $(this).serialize();
+
+                    $.ajax({
+                        method : 'POST',
+                        url : '/register',
+                        data : data,
+                        success : function(){
+                        }
+                    });
+                });
+            })
+        </script>
+
+        {% block js %}{% endblock %}
     </body>
 </html>
