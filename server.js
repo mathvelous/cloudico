@@ -23,7 +23,7 @@ var connexion = function () {
 }
 
 /* ROAD TO ASSETS DIRECTORY */
-app.use(session({ secret: 'this-is-a-secret-token'}));
+app.use(session({ secret: 'this-is-a-secret-token', cookie: { maxAge: 14 * 24 * 3600000 }}))
 
 app.use('/css', express.static('assets/css'));
 app.use('/js', express.static('assets/js'));
@@ -40,7 +40,13 @@ app.set('views',  __dirname + '/views')
 
 //Routes
 app.get('/', function (req, res) {
-    res.render('index.twig');
+    var user = null
+    if (req.session.someAttribute != undefined) {
+        user = req.session.someAttribute
+    }
+    res.render('index.twig', {
+        user: user
+    })
 })
 app.get('/cloud-words', function (req, res) {
     res.render('cloud_words.twig');
@@ -85,11 +91,31 @@ app.get('/vald-delete', function (req, res) {
 app.post('/register', function (req, res) {
     var co = connexion()
     co.connect()
-    co.query("INSERT INTO user (name, email, password) VALUES ('" + req.body.name + "','" + req.body.email + "','" + req.body.password + "')" , function (error, results, fields){
+    co.query("INSERT INTO user (name, email, password) VALUES ('" + req.body.name + "','" + req.body.email + "','" + bcrypt.hashSync(req.body.password, 10) + "')" , function (error, results, fields){
         if (error){
             return console.log('error in server ', error)
         }
-        console.log('ok')
+        res.send({msg: 'ok'})
+    })
+})
+app.post('/login', function (req, res) {
+    var co = connexion();
+    co.connect();
+    co.query("select * from user where email like '" + req.body.email + "';", function (error, results, fields) {
+        if (error) return console.log(error);
+        if (results.length > 0) {
+            bcrypt.compare(req.body.password, results[0].password).then(function (password) {
+                if (password === true) {
+                    var sessData = req.session;
+                    sessData.someAttribute = results[0].id;
+                    res.send({msg:'connected'})
+                } else {
+                    res.render('index.twig', {checkPassword: password})
+                }
+            })
+        } else {
+            res.render('index.twig')
+        }
     })
 })
 

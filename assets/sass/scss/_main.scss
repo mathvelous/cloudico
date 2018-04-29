@@ -115,6 +115,14 @@ input[type='search']{
     width: 150px;
     color: #000000;
   }
+  p{
+    height: 40px;
+    width: 150px;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .button_green_sm{
@@ -153,7 +161,7 @@ input[type='search']{
 }
 
 .big_button{
-  a{
+  a, p{
     height: 40px;
     width: 280px;
   }
@@ -223,21 +231,20 @@ input[type='search']{
   top: 20%;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 40;
+  z-index: 80;
   padding: 20px;
   background-color: #ffffff;
   width: 78vw;
   box-shadow: 2px 2px 5px rgba(143, 143, 143, .8);
   border-radius:15px;
-  /*display: none;*/
 }
 
 .bg-modal{
   background-color: rgba(143, 143, 143, .8);
-  position: relative;
+  position: fixed;
   top: 0;
-  z-index: 20;
+  z-index: 60;
   height: 100vh;
-  max-height: 100vh;
+  width: 100vh;
   overflow: hidden;
 }

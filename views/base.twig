@@ -16,22 +16,32 @@
 </head>
     <body>
         {% block register %}
-            <div class="modal">
+            <div id="bgModal"></div>
+            <div class="modal d_none">
                 <div class="row space_between">
                     <h2 class="mb20">Pour pouvoir profier pleinement
                         de notre application inscriver vous.</h2>
-                    <button class="mb70"><img src="/images/cross.png" alt="Fermer la fenêtre"></button>
+                    <button id="close" class="mb70"><img src="/images/cross.png" alt="Fermer la fenêtre"></button>
                 </div>
                 <div class="row space_between">
-                    <button class="button_green_sm">
+                    <button id="register" class="button_green_sm">
                         <a href="">Inscription</a>
                     </button>
-                    <button class="button_bg_none">
+                    <button id="login" class="button_bg_none">
                         <a href="">Connexion</a>
                     </button>
                 </div>
                 <form class="form" id="registerForm">
                     <input type="text" name="name" placeholder="Pseudonyme">
+                    <input type="email" name="email" placeholder="Mail">
+                    <input type="password" name="password" placeholder="Mot de passe">
+                    <div class="column align-center">
+                        <button type="submit" class="button_blue_sm big_button">
+                            <p>Valider</p>
+                        </button>
+                    </div>
+                </form>
+                <form class="d_none" id="loginForm">
                     <input type="email" name="email" placeholder="Mail">
                     <input type="password" name="password" placeholder="Mot de passe">
                     <div class="column align-center">
@@ -47,19 +57,71 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="/community"><img src="/images/community.png" alt="community"></a>
+                        <a id="community" href="/community"><img src="/images/community.png" alt="community"></a>
                     </li>
                     <li class="logo">
                         <a href="/"><img src="/images/logo.png" alt="Cloudico logo"></a>
                     </li>
                     <li>
-                        <a href="/profile"><img src="/images/mycloud.png" alt="my cloud"></a>
+                        <a id="cloudProfile" href="/profile"><img src="/images/mycloud.png" alt="my cloud"></a>
                     </li>
                 </ul>
             </nav>
         {% endblock %}
 
         <script>
+            // Choose between register and login
+            document.querySelector('#login').addEventListener('click', function (e) {
+                e.preventDefault()
+                document.querySelector('#registerForm').classList.add('d_none')
+                document.querySelector('#registerForm').classList.remove('form')
+                document.querySelector('#loginForm').classList.remove('d_none')
+                document.querySelector('#loginForm').classList.add('d_block')
+                document.querySelector('#loginForm').classList.add('form')
+
+                document.querySelector('#register').classList.remove('button_green_sm')
+                document.querySelector('#register').classList.add('button_bg_none')
+                document.querySelector('#login').classList.remove('button_bg_none')
+                document.querySelector('#login').classList.add('button_green_sm')
+            })
+
+            // Click on close modal
+            document.querySelector('#close').addEventListener('click', function () {
+                document.querySelector('.modal').classList.add('d_none')
+                document.querySelector('.modal').classList.add('d_none')
+                document.querySelector('body').classList.remove('bg-modal')
+                document.querySelector('#bgModal').classList.remove('bg-modal')
+            })
+
+            // Click on profile
+            document.querySelector('#profile').addEventListener('click', function (e) {
+                {% if user == null %}
+                    e.preventDefault()
+                    document.querySelector('.modal').classList.remove('d_none')
+                    document.querySelector('#bgModal').classList.add('bg-modal')
+                {% endif %}
+            })
+
+            // Click on mycloud
+            document.querySelector('#cloudProfile').addEventListener('click', function (e) {
+                {% if user == null %}
+                    e.preventDefault()
+                    document.querySelector('.modal').classList.remove('d_none')
+                    document.querySelector('#bgModal').classList.add('bg-modal')
+                {% endif %}
+            })
+
+            // Click on community
+            document.querySelector('#community').addEventListener('click', function (e) {
+                {% if user == null %}
+                    e.preventDefault()
+                    document.querySelector('.modal').classList.remove('d_none')
+                    document.querySelector('#bgModal').classList.add('bg-modal')
+                {% endif %}
+            })
+
+
+            // Ajax fom register and login
             $(document).ready(function () {
 
                 var form = $('#registerForm')
@@ -74,6 +136,32 @@
                         url : '/register',
                         data : data,
                         success : function(){
+                            let a = document.createElement('a')
+                            a.setAttribute('href', '/profile')
+                            a.click()
+                        }
+                    });
+                });
+
+                var form2 = $('#loginForm')
+
+                form2.submit(function(e){
+                    e.preventDefault()
+
+                    var data = $(this).serialize();
+
+                    $.ajax({
+                        method : 'POST',
+                        url : '/login',
+                        data : data,
+                        success : function(data){
+                            console.log(data.msg)
+                            if(data.msg == 'connected'){
+                                console.log('if')
+                                let a = document.createElement('a')
+                                a.setAttribute('href', '/profile')
+                                a.click()
+                            }
                         }
                     });
                 });
