@@ -49,43 +49,148 @@ app.get('/', function (req, res) {
     })
 })
 app.get('/cloud-words', function (req, res) {
-    res.render('cloud_words.twig');
+    var user = null
+    if (req.session.someAttribute != undefined) {
+        user = req.session.someAttribute
+    }
+    res.render('cloud_words.twig',{
+        user: user
+    });
 })
 app.get('/search', function (req, res) {
-    res.render('search.twig');
+    var user = null
+    if (req.session.someAttribute != undefined) {
+        user = req.session.someAttribute
+    }
+    var co = connexion()
+    co.connect()
+    co.query("SELECT * FROM `word` WHERE name LIKE '"+ req.query.q +"%'", function (error, results, fields) {
+        if (error) return console.log(error)
+        if (results.length > 0){
+            var words = results
+            res.render('search.twig', {
+                user: user,
+                words: words
+            });
+        }else{
+            res.render('search.twig', {
+                user: user,
+                error: 'Aucun résultat'
+            });
+        }
+    })
 })
 app.get('/definition', function (req, res) {
-    res.render('definition.twig');
+    var user = null
+    if (req.session.someAttribute != undefined) {
+        user = req.session.someAttribute
+    }
+    console.log(req.query.q)
+    var co = connexion()
+    co.connect()
+    co.query("SELECT * FROM `word` WHERE id = "+ req.query.q, function (error, results, fields) {
+        if (error) return console.log(error)
+        if (results.length > 0){
+            console.log('toto')
+            var word = results[0]
+            res.render('definition.twig', {
+                user: user,
+                word: word
+            });
+        }else{
+            res.redirect('/');
+        }
+    })
 })
 app.get('/profile', function (req, res) {
-    res.render('profile.twig');
+    var user = null
+    if (req.session.someAttribute != undefined) {
+        user = req.session.someAttribute
+    }
+    res.render('profile.twig', {
+        user: user
+    });
 })
 app.get('/community', function (req, res) {
-    res.render('community.twig');
+    var user = null
+    if (req.session.someAttribute != undefined) {
+        user = req.session.someAttribute
+    }
+    res.render('community.twig', {
+        user: user
+    });
 })
 app.get('/add-word', function (req, res) {
-    res.render('add_word.twig');
+    var user = null
+    if (req.session.someAttribute != undefined) {
+        user = req.session.someAttribute
+    }
+    res.render('add_word.twig', {
+        user: user
+    });
 })
 app.get('/cloud-talk', function (req, res) {
-    res.render('cloud_talk.twig');
+    var user = null
+    if (req.session.someAttribute != undefined) {
+        user = req.session.someAttribute
+    }
+    res.render('cloud_talk.twig', {
+        user: user
+    });
 })
 app.get('/demandes-add', function (req, res) {
-    res.render('demandes_add.twig');
+    var user = null
+    if (req.session.someAttribute != undefined) {
+        user = req.session.someAttribute
+    }
+    res.render('demandes_add.twig', {
+        user: user
+    });
 })
 app.get('/demandes-modify', function (req, res) {
-    res.render('demandes_modify.twig');
+    var user = null
+    if (req.session.someAttribute != undefined) {
+        user = req.session.someAttribute
+    }
+    res.render('demandes_modify.twig', {
+        user: user
+    });
 })
 app.get('/demandes-delete', function (req, res) {
-    res.render('demandes_delete.twig');
+    var user = null
+    if (req.session.someAttribute != undefined) {
+        user = req.session.someAttribute
+    }
+    res.render('demandes_delete.twig', {
+        user: user
+    });
 })
 app.get('/vald-word', function (req, res) {
-    res.render('vald_word.twig');
+    var user = null
+    if (req.session.someAttribute != undefined) {
+        user = req.session.someAttribute
+    }
+    res.render('vald_word.twig', {
+        user: user
+    });
 })
 app.get('/vald-modification', function (req, res) {
-    res.render('vald_modification.twig');
+    var user = null
+    if (req.session.someAttribute != undefined) {
+        user = req.session.someAttribute
+    }
+    res.render('vald_modification.twig', {
+        user: user
+    });
 })
 app.get('/vald-delete', function (req, res) {
-    res.render('vald_delete.twig');
+    var user = null
+    if (req.session.someAttribute != undefined) {
+        user = req.session.someAttribute
+    }
+    res.render('vald_delete.twig', {
+        user: user
+    });
 })
 
 app.post('/register', function (req, res) {

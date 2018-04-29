@@ -7,8 +7,8 @@
             <a id="profile" href="/profile"><img src="/images/account.png" alt="Compte"></a>
         </div>
         <div class="green_line">
-            <h3>JavaScript</h3>
-            <p class="type mb20">(nom)</p>
+            <h3>{{ word.name }}</h3>
+            <p class="type mb20">({{ word.type }})</p>
         </div>
         <div class="loop owl-carousel tags_cloud">
             <div class="mr10">
@@ -42,15 +42,9 @@
         </div>
         <section>
             <article class="container_definition">
-                <p class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam corporis, deleniti ea
-                    nesciunt officiis recusandae
-                    reprehenderit repudiandae, sequi similique voluptas voluptatem? Asperiores eius enim exercitationem
-                    l
-                    aboriosam maiores reprehenderit saepe.
-                </p>
+                <p class="text">{{ word.definition }}</p>
             </article>
-            <div class="row space_between">
+            <div class="row space_between mb70">
                 <button class="button_green_sm">
                     <a href="">Modifier</a>
                 </button>
