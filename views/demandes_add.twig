@@ -26,58 +26,20 @@
     </section>
     <main class="container">
         <section class="container_card3">
-            <a href="/vald-word">
-                <div class="card_def row space_between align-center">
-                    <div>
-                        <h2>JavaScript</h2>
-                        <p class="type">(nom)</p>
-                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab incidunt
-                            necessitatibus nemo quaerat unde</p>
+            {% for word in words %}
+                <a href="/vald-word?q={{ word.id }}">
+                    <div class="card_def row space_between align-center">
+                        <div>
+                            <h2>{{ word.name }}</h2>
+                            <p class="type">({{ word.type }})</p>
+                            <p class="text">{{ word.definition|slice(0, 140)}}</p>
+                        </div>
+                        <div class="next">
+                            <img src="/images/next.png" alt="next">
+                        </div>
                     </div>
-                    <div class="next">
-                        <img src="/images/next.png" alt="next">
-                    </div>
-                </div>
-            </a>
-            <a href="/vald-word">
-                <div class="card_def row space_between align-center">
-                    <div>
-                        <h2>JavaScript</h2>
-                        <p class="type">(nom)</p>
-                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab incidunt
-                            necessitatibus nemo quaerat unde</p>
-                    </div>
-                    <div class="next">
-                        <img src="/images/next.png" alt="next">
-                    </div>
-                </div>
-            </a>
-            <a href="/vald-word">
-                <div class="card_def row space_between align-center">
-                    <div>
-                        <h2>JavaScript</h2>
-                        <p class="type">(nom)</p>
-                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab incidunt
-                            necessitatibus nemo quaerat unde</p>
-                    </div>
-                    <div class="next">
-                        <img src="/images/next.png" alt="next">
-                    </div>
-                </div>
-            </a>
-            <a href="/vald-word">
-                <div class="card_def row space_between align-center">
-                    <div>
-                        <h2>JavaScript</h2>
-                        <p class="type">(nom)</p>
-                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab incidunt
-                            necessitatibus nemo quaerat unde</p>
-                    </div>
-                    <div class="next">
-                        <img src="/images/next.png" alt="next">
-                    </div>
-                </div>
-            </a>
+                </a>
+            {% endfor %}
         </section>
     </main>
 {% endblock %}

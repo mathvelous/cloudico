@@ -7,8 +7,8 @@
             <a id="profile" href="/profile"><img src="/images/account.png" alt="Compte"></a>
         </div>
         <div class="green_line">
-            <h3>JavaScript</h3>
-            <p class="type mb20">(nom)</p>
+            <h3>{{ demande.name }}</h3>
+            <p class="type mb20">({{ demande.type }})</p>
         </div>
         <section class="container_tags">
             <div class="tags_cloud">
@@ -31,13 +31,7 @@
         </section>
         <section>
             <article class="container_definition">
-                <p class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam corporis, deleniti ea
-                    nesciunt officiis recusandae
-                    reprehenderit repudiandae, sequi similique voluptas voluptatem? Asperiores eius enim exercitationem
-                    l
-                    aboriosam maiores reprehenderit saepe.
-                </p>
+                <p class="text">{{ demande.definition }}</p>
             </article>
             <div class="column align-center">
                 <button class="button_blue_sm big_button">

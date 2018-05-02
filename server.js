@@ -143,9 +143,20 @@ app.get('/demandes-add', function (req, res) {
     if (req.session.someAttribute != undefined) {
         user = req.session.someAttribute
     }
-    res.render('demandes_add.twig', {
-        user: user
-    });
+    var co = connexion()
+    co.connect()
+    co.query("SELECT * FROM `demande` ", function (error, results, fields) {
+        if (error) return console.log(error)
+        if (results.length > 0) {
+            var words = results
+            res.render('demandes_add.twig', {
+                user: user,
+                words: words
+            });
+        } else {
+            res.redirect('/');
+        }
+    })
 })
 app.get('/demandes-modify', function (req, res) {
     var user = null
@@ -170,9 +181,20 @@ app.get('/vald-word', function (req, res) {
     if (req.session.someAttribute != undefined) {
         user = req.session.someAttribute
     }
-    res.render('vald_word.twig', {
-        user: user
-    });
+    var co = connexion()
+    co.connect()
+    co.query("SELECT * FROM `demande` WHERE id = "+ req.query.q, function (error, results, fields) {
+        if (error) return console.log(error)
+        if (results.length > 0){
+            var demande = results[0]
+            res.render('vald_word.twig', {
+                user: user,
+                demande: demande
+            });
+        }else{
+            res.redirect('/');
+        }
+    })
 })
 app.get('/vald-modification', function (req, res) {
     var user = null
@@ -221,6 +243,16 @@ app.post('/login', function (req, res) {
         } else {
             res.render('index.twig')
         }
+    })
+})
+app.post('/add-word', function (req, res) {
+    var co = connexion()
+    co.connect()
+    co.query("INSERT INTO demande (name, type, definition) VALUES ('" + req.body.word_name + "','" + req.body.word_type + "',\"" + req.body.word_definition + "\")" , function (error, results, fields){
+        if (error){
+            return console.log('error in server ', error)
+        }
+        res.redirect('/demandes-add')
     })
 })
 

@@ -39,15 +39,15 @@
             </div>
         </div>
         <section class="mb70">
-            <form class="form" action="">
+            <form class="form" method="post">
                 <label for="word_name">Nom du mot</label>
-                <input id="word_name" type="text" placeholder="Ex : développement">
+                <input id="word_name" name="word_name" type="text" placeholder="Ex : développement">
                 
                 <label for="word_type">Type</label>
-                <input id="word_type" type="text" placeholder="Ex : nom">
+                <input id="word_type" name="word_type" type="text" placeholder="Ex : nom">
                 
                 <label>Définition</label>
-                <textarea name=""></textarea>
+                <textarea name="word_definition"></textarea>
                 <div class="column align-center">
                     <button type="submit" class="button_submit">
                         <p>Envoyer mon ajout</p>
