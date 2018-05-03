@@ -5,7 +5,7 @@
             <button onclick="goBack()"><img src="/images/prev.png" alt=""></button>
             <a id="profile" href="/profile"><img src="/images/account.png" alt="Compte"></a>
         </div>
-        <input class="mb20" type="search" placeholder="">
+        <input id="search" class="mb20" type="search" placeholder="">
         <section class="container_card2">
             {% if error %}
                 {{ error }}
@@ -16,7 +16,7 @@
                         <div>
                             <h2>{{ word.name }}</h2>
                             <p class="type">({{ word.type }})</p>
-                            <p class="text">{{ word.definition|slice(0, 140)}}</p>
+                            <p class="text">{{ word.definition|slice(0, 140) }}</p>
                         </div>
                         <div class="next">
                             <img src="/images/next.png" alt="next">
@@ -32,5 +32,42 @@
         function goBack() {
             window.history.back();
         }
+
+        $(document).ready(function () {
+            $('#search').on('keydown', function () {
+                $.ajax({
+                    method: 'GET',
+                    url: '/autocomplete?q=' + $(this).val(),
+                    datatype: JSON,
+                    success: function (data) {
+                        console.log(data)
+                        if (data.error) {
+                            $('.container_card2')[0].innerHTML = ''
+                            $('.container_card2')[0].append(data.error)
+                            return
+                        } else {
+                            $('.container_card2')[0].innerHTML = ''
+                            for (let i = 0; i<data.words.length; i++) {
+                                let word = data.words[i],
+                                    def = word.definition.slice(0, 140)
+                                $('.container_card2').append("" +
+                                    "               <a href=\"/definition?q=" + word.id + "\">\n" +
+                                    "                    <div class=\"card_def row space_between align-center\">\n" +
+                                    "                        <div>\n" +
+                                    "                            <h2>" + word.name + "</h2>\n" +
+                                    "                            <p class=\"type\">(" + word.type + ")</p>\n" +
+                                    "                            <p class=\"text\">" + def + "</p>\n" +
+                                    "                        </div>\n" +
+                                    "                        <div class=\"next\">\n" +
+                                    "                            <img src=\"/images/next.png\" alt=\"next\">\n" +
+                                    "                        </div>\n" +
+                                    "                    </div>\n" +
+                                    "                </a>")
+                            }
+                        }
+                    }
+                });
+            })
+        })
     </script>
-{% endblock %}
+{% endblock %}`

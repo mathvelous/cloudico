@@ -108,47 +108,48 @@ input[type='search'] {
   font-size: 1.1rem;
   height: 40px;
   margin: 5px 0;
+  padding-left: 45px;
 }
 
-/* line 50, ../sass/scss/_main.scss */
+/* line 51, ../sass/scss/_main.scss */
 .row {
   display: flex;
   flex-direction: row;
 }
 
-/* line 55, ../sass/scss/_main.scss */
+/* line 56, ../sass/scss/_main.scss */
 .column {
   display: flex;
   flex-direction: column;
 }
 
-/* line 60, ../sass/scss/_main.scss */
+/* line 61, ../sass/scss/_main.scss */
 .space_between {
   justify-content: space-between;
 }
 
-/* line 64, ../sass/scss/_main.scss */
+/* line 65, ../sass/scss/_main.scss */
 .align-center {
   align-items: center;
 }
 
-/* line 68, ../sass/scss/_main.scss */
+/* line 69, ../sass/scss/_main.scss */
 .big {
   font-size: 1.5rem;
 }
 
-/* line 72, ../sass/scss/_main.scss */
+/* line 73, ../sass/scss/_main.scss */
 .green_line {
   border-bottom: 1px solid #7FEFC1;
   margin: 20px 0;
 }
 
-/* line 77, ../sass/scss/_main.scss */
+/* line 78, ../sass/scss/_main.scss */
 .top_cloud_words {
   height: 200px;
 }
 
-/* line 81, ../sass/scss/_main.scss */
+/* line 82, ../sass/scss/_main.scss */
 .top_cloud_icons {
   position: absolute;
   z-index: 20;
@@ -157,42 +158,42 @@ input[type='search'] {
   right: 3vh;
 }
 
-/* line 89, ../sass/scss/_main.scss */
+/* line 90, ../sass/scss/_main.scss */
 .title_cloud_words {
   margin-top: 100px;
 }
 
-/* line 93, ../sass/scss/_main.scss */
+/* line 94, ../sass/scss/_main.scss */
 .text {
   color: #4D4D4D;
   font-size: 0.8rem;
 }
 
-/* line 98, ../sass/scss/_main.scss */
+/* line 99, ../sass/scss/_main.scss */
 .button, .button_blue_sm, .button_green_sm, .button_violet_sm, .button_bg_none {
   border-radius: 25px;
   border: none;
 }
-/* line 101, ../sass/scss/_main.scss */
+/* line 102, ../sass/scss/_main.scss */
 .button a, .button_blue_sm a, .button_green_sm a, .button_violet_sm a, .button_bg_none a {
   align-items: center;
   justify-content: center;
   display: flex;
 }
 
-/* line 108, ../sass/scss/_main.scss */
+/* line 109, ../sass/scss/_main.scss */
 .button_blue_sm {
   background: url(/images/bg-blue.jpg);
   background-position: right;
   background-repeat: no-repeat;
 }
-/* line 113, ../sass/scss/_main.scss */
+/* line 114, ../sass/scss/_main.scss */
 .button_blue_sm a {
   height: 40px;
   width: 150px;
   color: #000000;
 }
-/* line 118, ../sass/scss/_main.scss */
+/* line 119, ../sass/scss/_main.scss */
 .button_blue_sm p {
   height: 40px;
   width: 150px;
@@ -202,112 +203,112 @@ input[type='search'] {
   justify-content: center;
 }
 
-/* line 128, ../sass/scss/_main.scss */
+/* line 129, ../sass/scss/_main.scss */
 .button_green_sm {
   background: url(/images/bg-green.jpg);
   background-position: right;
   background-repeat: no-repeat;
 }
-/* line 133, ../sass/scss/_main.scss */
+/* line 134, ../sass/scss/_main.scss */
 .button_green_sm a {
   height: 40px;
   width: 150px;
   color: #000000;
 }
 
-/* line 140, ../sass/scss/_main.scss */
+/* line 141, ../sass/scss/_main.scss */
 .button_violet_sm {
   background: url(/images/bg-violet.jpg);
   background-position: right;
   background-repeat: no-repeat;
 }
-/* line 145, ../sass/scss/_main.scss */
+/* line 146, ../sass/scss/_main.scss */
 .button_violet_sm a {
   height: 40px;
   width: 150px;
   color: #ffffff;
 }
 
-/* line 153, ../sass/scss/_main.scss */
+/* line 154, ../sass/scss/_main.scss */
 .button_bg_none {
   background: transparent;
 }
-/* line 156, ../sass/scss/_main.scss */
+/* line 157, ../sass/scss/_main.scss */
 .button_bg_none a {
   height: 40px;
   width: 150px;
   color: #000000;
 }
 
-/* line 164, ../sass/scss/_main.scss */
+/* line 165, ../sass/scss/_main.scss */
 .big_button a, .big_button p {
   height: 40px;
   width: 280px;
 }
 
-/* line 170, ../sass/scss/_main.scss */
+/* line 171, ../sass/scss/_main.scss */
 .next {
   padding: 15px 0px 15px 15px;
 }
 
-/* line 174, ../sass/scss/_main.scss */
+/* line 175, ../sass/scss/_main.scss */
 .card_def {
   margin: 20px 0;
 }
 
-/* line 178, ../sass/scss/_main.scss */
+/* line 179, ../sass/scss/_main.scss */
 .container_cards, .container_card, .container_card2, .container_tchat, .container_card3 {
   margin-bottom: 50px;
 }
 
-/* line 182, ../sass/scss/_main.scss */
+/* line 183, ../sass/scss/_main.scss */
 .container_card {
   max-height: 50vh;
   overflow: scroll;
 }
 
-/* line 188, ../sass/scss/_main.scss */
+/* line 189, ../sass/scss/_main.scss */
 .container_card2, .container_tchat {
   max-height: 80vh;
   overflow: scroll;
 }
 
-/* line 195, ../sass/scss/_main.scss */
+/* line 196, ../sass/scss/_main.scss */
 .container_card3 {
   max-height: 60vh;
   overflow: scroll;
   margin-bottom: 20px;
 }
 
-/* line 206, ../sass/scss/_main.scss */
+/* line 207, ../sass/scss/_main.scss */
 .container_buttons_profile {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 30px;
 }
-/* line 211, ../sass/scss/_main.scss */
+/* line 212, ../sass/scss/_main.scss */
 .container_buttons_profile button:first-child {
   margin-bottom: 40px;
 }
 
-/* line 216, ../sass/scss/_main.scss */
+/* line 217, ../sass/scss/_main.scss */
 .container_demands {
   display: flex;
   justify-content: center;
 }
 
-/* line 221, ../sass/scss/_main.scss */
+/* line 222, ../sass/scss/_main.scss */
 .d_none {
   display: none;
 }
 
-/* line 225, ../sass/scss/_main.scss */
+/* line 226, ../sass/scss/_main.scss */
 .d_block {
   display: block;
 }
 
-/* line 229, ../sass/scss/_main.scss */
+/* line 230, ../sass/scss/_main.scss */
 .modal {
   position: absolute;
   top: 20%;
@@ -321,7 +322,7 @@ input[type='search'] {
   border-radius: 15px;
 }
 
-/* line 242, ../sass/scss/_main.scss */
+/* line 243, ../sass/scss/_main.scss */
 .bg-modal {
   background-color: rgba(143, 143, 143, 0.8);
   position: fixed;

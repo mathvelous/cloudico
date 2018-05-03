@@ -15,10 +15,10 @@ var port = 1337;
 //Connection mysql
 var connexion = function () {
     return mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        password: "root",
-        database: "cloudico"
+        host: "mysql-mathvelous.alwaysdata.net",
+        user: "155185_depanncar",
+        password: "totolola42",
+        database: "mathvelous_cloudico"
     });
 }
 
@@ -75,6 +75,23 @@ app.get('/search', function (req, res) {
         }else{
             res.render('search.twig', {
                 user: user,
+                error: 'Aucun résultat'
+            });
+        }
+    })
+})
+app.get('/autocomplete', function (req, res) {
+    var co = connexion()
+    co.connect()
+    co.query("SELECT * FROM `word` WHERE name LIKE '"+ req.query.q +"%'", function (error, results, fields) {
+        if (error) return console.log(error)
+        if (results.length > 0){
+            var words = results
+            res.send({
+                words: words
+            });
+        }else{
+            res.send({
                 error: 'Aucun résultat'
             });
         }
