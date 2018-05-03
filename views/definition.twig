@@ -48,7 +48,7 @@
                 <button class="button_green_sm">
                     <a href="">Modifier</a>
                 </button>
-                <button class="button_blue_sm">
+                <button id="favorite" class="button_blue_sm">
                     <a href="">Enregistrer</a>
                 </button>
             </div>
@@ -76,6 +76,18 @@
                     }
                 }
             });
+
+           $('#favorite').on('click', function (e) {
+               e.preventDefault()
+               $.ajax({
+                   method: 'POST',
+                   url: '/favorites',
+                   data: {id:{{ word.id }}},
+                   success: function (data){
+
+                   }
+               })
+           })
 
         });
     </script>

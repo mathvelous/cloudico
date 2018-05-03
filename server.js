@@ -124,9 +124,30 @@ app.get('/profile', function (req, res) {
     if (req.session.someAttribute != undefined) {
         user = req.session.someAttribute
     }
-    res.render('profile.twig', {
-        user: user
-    });
+    var co = connexion()
+    co.connect()
+    co.query("SELECT * FROM user WHERE id=" + req.session.someAttribute, function (error, results, fields) {
+        if (error) return console.log(error)
+        if (results.length > 0){
+            user = results[0]
+        }
+        co.query("SELECT w.* FROM word w INNER JOIN favorites f ON f.id_word = w.id and f.id_user = " + req.session.someAttribute, function (error, results, fields) {
+            if (error) return console.log(error)
+            console.log(req.session.someAttribute)
+            if (results.length > 0){
+                var words = results
+                res.render('profile.twig', {
+                    user: user,
+                    words: words
+                });
+            }else{
+                res.render('profile.twig', {
+                    user: user,
+                    error: 'Aucun résultat'
+                });
+            }
+        })
+    })
 })
 app.get('/community', function (req, res) {
     var user = null
@@ -270,6 +291,18 @@ app.post('/add-word', function (req, res) {
             return console.log('error in server ', error)
         }
         res.redirect('/demandes-add')
+    })
+})
+app.post('/favorites', function (req, res) {
+    var co = connexion()
+    co.connect()
+    co.query("INSERT INTO favorites (id_user, id_word) VALUES (" + req.session.someAttribute + "," + req.body.id + ")" , function (error, results, fields){
+        if (error){
+            return console.log('error in server ', error)
+        }
+        if(results.length > 0){
+            res.send('')
+        }
     })
 })
 

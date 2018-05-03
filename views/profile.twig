@@ -6,7 +6,7 @@
             <div class="img_profile">
                 <img src="/images/profile.jpg" alt="Image de profile">
             </div>
-            <p class="big ml20">Jarjarbins</p>
+            <p class="big ml20">{{ user.name }}</p>
         </div>
         <div class="row space_between">
             <button id="myCloud" class="button_green_sm">
@@ -17,39 +17,23 @@
             </button>
         </div>
         <section id="Cloud" class="container_card">
-            <div class="card_def row space_between align-center">
-                <div>
-                    <h2>JavaScript</h2>
-                    <p class="type">(nom)</p>
-                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab incidunt
-                        necessitatibus nemo quaerat unde</p>
-                </div>
-                <div class="next">
-                    <img src="/images/next.png" alt="next">
-                </div>
-            </div>
-            <div class="card_def row space_between align-center">
-                <div>
-                    <h2>JavaScript</h2>
-                    <p class="type">(nom)</p>
-                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab incidunt
-                        necessitatibus nemo quaerat unde</p>
-                </div>
-                <div class="next">
-                    <img src="/images/next.png" alt="next">
-                </div>
-            </div>
-            <div class="card_def row space_between align-center">
-                <div>
-                    <h2>JavaScript</h2>
-                    <p class="type">(nom)</p>
-                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab incidunt
-                        necessitatibus nemo quaerat unde</p>
-                </div>
-                <div class="next">
-                    <img src="/images/next.png" alt="next">
-                </div>
-            </div>
+            {% if error %}
+                {{ error }}
+            {% endif %}
+            {% for word in words %}
+                <a href="/definition?q={{ word.id }}">
+                    <div class="card_def row space_between align-center">
+                        <div>
+                            <h2>{{ word.name }}</h2>
+                            <p class="type">({{ word.type }})</p>
+                            <p class="text">{{ word.definition|slice(0, 140) }}</p>
+                        </div>
+                        <div class="next">
+                            <img src="/images/next.png" alt="next">
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
         </section>
         <section id="Info" class="column justify_center d_none">
             <form class="form" action="">
