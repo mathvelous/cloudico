@@ -36,9 +36,9 @@
             {% endfor %}
         </section>
         <section id="Info" class="column justify_center d_none">
-            <form class="form" action="">
-                <input type="text">
-                <input type="text">
+            <form class="form" action="POST">
+                <input type="text" placeholder="{{ user.name }}">
+                <input type="text" placeholder="Mot de passe">
                 <div class="container_buttons_profile">
                     <button class="button_blue_sm big_button">
                         <a href="">Valider mes informations</a>
